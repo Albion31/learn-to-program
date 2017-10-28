@@ -1,6 +1,6 @@
 # deaf grandma
 
-puts "Hi Sonny, how are you? "
+puts "Hi Sonny, how are you?"
 
 while true
   answer = gets.chomp
@@ -10,7 +10,7 @@ while true
   else
     puts "NO, NOT SINCE #{rand(1930..1950)}!"
   end
-  
+
   if answer == "BYE"
     puts "BYE SONNY!"
     break
