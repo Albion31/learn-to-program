@@ -87,6 +87,8 @@ end
 
 # puts exp_english_number( 0)
 puts exp_english_number(9931)
+puts exp_english_number(59931)
+puts exp_english_number(459931)
 # puts exp_english_number( 10)
 # puts exp_english_number( 11)
 # puts exp_english_number( 17)
