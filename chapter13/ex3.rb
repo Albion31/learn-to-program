@@ -1,11 +1,11 @@
-# Baby dragon
+# interactive baby Dragon
 
 class Dragon
   def initialize(name)
     @name = name
     @asleep = false
-    @stuff_in_belly = 10 #He is full
-    @stuff_in_intestine = 0 #He doesn't need to go
+    @stuff_in_belly = 10
+    @stuff_in_intestine = 0
 
     puts "#{@name} is born."
   end
@@ -57,8 +57,6 @@ class Dragon
   end
 
   private
-#private means that the methods defined below are methods internal to the object
-#(You can feed teh dragon but you can't ask him whether he's hungry)
 
   def hungry?
     @stuff_in_belly <= 2
@@ -79,7 +77,7 @@ class Dragon
         puts "He wakes up suddenly!"
       end
       puts "#{@name} is starving! In desperation, he ate YOU!"
-      exit #this quits the program
+      exit
     end
 
     if @stuff_in_intestine >= 10
@@ -103,20 +101,31 @@ class Dragon
       puts "#{@name} does the potty dance..."
     end
   end
-end
 
-pet = Dragon.new("Norbert")
-pet.feed
-pet.toss
-pet.walk
-pet.put_to_bed
-pet.rock
-pet.put_to_bed
-pet.feed
-pet.toss
-pet.walk
-pet.put_to_bed
-pet.put_to_bed
-pet.put_to_bed
-pet.put_to_bed
-pet.put_to_bed
+  puts "What would you like to name your baby dragon?"
+  name = gets.chomp
+  pet = Dragon.new(name)
+
+  while true
+    puts ""
+    puts "The commands are : feed, toss, walk, rock, put to bed and exit."
+    puts "What would you like to do?"
+    command = gets.chomp
+
+    if command == "exit"
+      exit
+    elsif command == "feed"
+      pet.feed
+    elsif command == "toss"
+      pet.toss
+    elsif command == "walk"
+      pet.walk
+    elsif command == "rock"
+      pet.rock
+    elsif command == "put to bed"
+      pet.put_to_bed
+    else
+      puts "I don't understand this command, please repeat."
+    end
+  end
+end
