@@ -31,5 +31,5 @@ date = birth_dates[name]
 if date == nil
   puts "This name is not on the list"
 else
-  puts date
+  puts date[0..5]
 end
